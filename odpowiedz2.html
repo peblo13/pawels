@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpowiedź 2 - eCVjob.pl</title>
+    <link rel="stylesheet" href="css/odpowiedz2.css">
+</head>
+<body>
+    <header>
+        <h1>eCVjob.pl</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="o_nas.html">O Nas</a></li>
+            <li><a href="baza_cv.html">Baza CV</a></li>
+            <li><a href="oferty_pracy.html">Oferty Pracy</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="kreator_cv.html">Kreator CV</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="login.html">Zaloguj się</a></li>
+            <li><a href="register.html">Zarejestruj się</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sekcja Odpowiedź 2 -->
+    <section id="odpowiedz2">
+        <h2>Jak mogę dodać ofertę pracy?</h2>
+        <p>Aby dodać ofertę pracy na naszej stronie, wykonaj następujące kroki:</p>
+        <ol>
+            <li>Zaloguj się na swoje konto.</li>
+            <li>Przejdź do sekcji "Dodaj ofertę pracy".</li>
+            <li>Wypełnij formularz, podając szczegóły oferty pracy, takie jak tytuł, opis, wymagania, lokalizacja i wynagrodzenie.</li>
+            <li>Kliknij przycisk "Dodaj ofertę", aby opublikować ofertę pracy.</li>
+        </ol>
+        <p>Po wykonaniu tych kroków Twoja oferta pracy będzie widoczna dla kandydatów na naszej stronie.</p>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const links = navbar.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').split('.')[0];
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = this.getAttribute('href');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

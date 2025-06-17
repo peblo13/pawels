@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Anna Nowak</title>
+    <link rel="stylesheet" href="css/cv2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-pic">
+                <img id="profileImage" src="images/miejscenazdjecie.png" alt="Anna Nowak">
+                <input type="file" id="imageUpload" accept="image/*" onchange="loadFile(event)">
+                <label for="imageUpload" class="upload-icon">
+                    <img src="images/upload-icon.png" alt="Upload Icon">
+                </label>
+            </div>
+            <div class="header-content">
+                <h1>Anna Nowak</h1>
+                <p>Graphic Designer</p>
+                <p>anna.nowak@example.com | +48 987 654 321</p>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <section class="languages">
+                    <h2>Znajomość języków</h2>
+                    <ul>
+                        <li>Angielski <span class="stars">★★★☆☆</span></li>
+                        <li>Niemiecki <span class="stars">★★☆☆☆</span></li>
+                        <li>Francuski <span class="stars">★★★★★</span></li>
+                    </ul>
+                </section>
+                <section class="skills">
+                    <h2>Umiejętności</h2>
+                    <ul>
+                        <li>Adobe Photoshop <span class="stars">★★★★★</span></li>
+                        <li>Adobe Illustrator <span class="stars">★★★★☆</span></li>
+                        <li>CorelDRAW <span class="stars">★★★☆☆</span></li>
+                        <li>Branding <span class="stars">★★★★★</span></li>
+                    </ul>
+                </section>
+                <section class="interests">
+                    <h2>Zainteresowania</h2>
+                    <ul>
+                        <li>Fotografia</li>
+                        <li>Podróże</li>
+                        <li>Muzyka</li>
+                        <li>Sport</li>
+                    </ul>
+                </section>
+            </aside>
+            <section class="content">
+                <section class="about">
+                    <h2>O mnie</h2>
+                    <p>Jestem kreatywnym grafikiem z doświadczeniem w projektowaniu wizualnym i brandingiem. Specjalizuję się w tworzeniu unikalnych projektów graficznych, które przyciągają uwagę i budują silną tożsamość marki.</p>
+                </section>
+                <section class="experience">
+                    <h2>Doświadczenie</h2>
+                    <div class="job">
+                        <h3>Senior Graphic Designer</h3>
+                        <p>XYZ Agency | 2019 - obecnie</p>
+                        <ul>
+                            <li>Projektowanie materiałów marketingowych</li>
+                            <li>Tworzenie identyfikacji wizualnej</li>
+                            <li>Współpraca z zespołem kreatywnym</li>
+                        </ul>
+                    </div>
+                    <div class="job">
+                        <h3>Graphic Designer</h3>
+                        <p>ABC Studio | 2016 - 2019</p>
+                        <ul>
+                            <li>Projektowanie logo i materiałów reklamowych</li>
+                            <li>Tworzenie grafik na potrzeby social media</li>
+                            <li>Przygotowywanie projektów do druku</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="education">
+                    <h2>Edukacja</h2>
+                    <div class="school">
+                        <h3>Akademia Sztuk Pięknych</h3>
+                        <p>Grafika | 2012 - 2016</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <p>Znajdź mnie na:</p>
+            <ul class="social-links">
+                <li><a href="https://linkedin.com/in/annanowak" target="_blank">LinkedIn</a></li>
+                <li><a href="https://behance.net/annanowak" target="_blank">Behance</a></li>
+                <li><a href="https://dribbble.com/annanowak" target="_blank">Dribbble</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('profileImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+</body>
+</html>

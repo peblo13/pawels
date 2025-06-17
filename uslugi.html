@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/uslugi.css">
+</head>
+<body>
+    <!-- Nagłówek -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="O_nas.html">O nas</a></li>
+                <li class="dropdown">
+                    <a href="baza_CV.html">Baza CV</a>
+                </li>
+                <li class="dropdown">
+                    <a href="oferty_pracy.html">Oferty pracy</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="uslugi.html">Usługi</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte_uslugi.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="kreator_cv.html">Kreator CV</a>
+                    <ul class="submenu">
+                        <li><a href="stworz_cv.html">Stwórz CV</a></li>
+                        <li><a href="szablony_cv.html">Szablony CV</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+            <ul class="auth-links">
+                <li><a href="#" id="register-link">Zarejestruj się</a></li>
+                <li><a href="#" id="login-link">Zaloguj się</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Główna zawartość strony -->
+    <main>
+        <section id="uslugi">
+            <h2>Usługi</h2>
+            <div class="search-bar">
+                <input type="text" id="search-service" placeholder="Szukaj po usłudze...">
+                <input type="text" id="search-location" placeholder="Szukaj po lokalizacji...">
+                <button id="search-button">Szukaj</button>
+            </div>
+            <button id="add-service-button">Dodaj usługę</button>
+            <div class="service-listings">
+                <!-- 8 kwadratów na usługi w układzie 2x4 -->
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 1</h3>
+                        <p>Lokalizacja 1</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 1...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 2</h3>
+                        <p>Lokalizacja 2</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 2...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 3</h3>
+                        <p>Lokalizacja 3</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 3...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 4</h3>
+                        <p>Lokalizacja 4</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 4...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 5</h3>
+                        <p>Lokalizacja 5</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 5...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 6</h3>
+                        <p>Lokalizacja 6</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 6...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 7</h3>
+                        <p>Lokalizacja 7</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 7...</p>
+                    </div>
+                </div>
+                <div class="service-square">
+                    <div class="service-info">
+                        <h3>Usługa 8</h3>
+                        <p>Lokalizacja 8</p>
+                    </div>
+                    <div class="service-description">
+                        <p>Pełen opis usługi 8...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginacja -->
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Formularz rejestracyjny -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Zarejestruj się</h2>
+            <form id="register-form">
+                <label for="username">Nazwa użytkownika:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Zarejestruj się</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formularz logowania -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Zaloguj się</h2>
+            <form id="login-form">
+                <label for="login-username">Nazwa użytkownika:</label>
+                <input type="text" id="login-username" name="login-username" required>
+                <label for="login-password">Hasło:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit">Zaloguj się</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2024 Moja Strona. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

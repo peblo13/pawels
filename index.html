@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona</title>
+    <link rel="stylesheet" href="href='styles.css'>
+    <link rel="stylesheet" href="css/cv3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cv-carousel .cv-template img {
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .job-square {
+            background-color: rgba(0, 0, 0, 0.7); /* Czarny z przezroczystością */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            position: relative;
+            color: #ffffff; /* Biały tekst */
+        }
+        .job-square:hover {
+            transform: scale(1.05);
+        }
+        .job-description {
+            display: none;
+        }
+        .apply-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-form {
+            display: none;
+            margin-top: 10px;
+        }
+        .apply-form input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .apply-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .add-job-button-container .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+            background: #00ff00; /* Zielonojaskrawy */
+            color: white;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .add-job-button-container .button:hover {
+            background: #009900;
+            transform: scale(1.05);
+        }
+        .add-service-button-container .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+            background: #00ff00; /* Zielonojaskrawy */
+            color: white;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .add-service-button-container .button:hover {
+            background: #009900;
+            transform: scale(1.05);
+        }
+        .location-marker {
+            color: red;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        .page-link {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            color: #00ff00;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .page-link:hover {
+            background: #00ff00;
+            color: #000;
+        }
+        .job-counter {
+            color: #00ff00; /* Jaskrawo zielony tekst */
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Licznik aktualnych ofert pracy -->
+        <div class="job-counter">
+            <h1>Liczba ofert pracy: <span id="job-count">0</span></h1>
+        </div>
+
+        <!-- Nagłówek -->
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="O_nas.html" class="page-link">O nas</a></li>
+                    <li class="dropdown">
+                        <a href="baza_CV.html" class="page-link">Baza CV</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="oferty_pracy.html" class="page-link">Oferty pracy</a>
+                        <ul class="submenu">
+                            <li><a href="dodaj_oferte_op.html" class="page-link">Dodaj ofertę pracy</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="uslugi.html" class="page-link">Usługi</a>
+                        <ul class="submenu">
+                            <li><a href="dodaj_oferte_u.html" class="page-link">Dodaj usługę</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="kreator_cv.html" class="page-link">Kreator CV</a>
+                        <ul class="submenu">
+                            <li><a href="stworzcv.html" class="page-link">Stwórz CV</a></li>
+                            <li><a href="szablony_cv.html" class="page-link">Szablony CV</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="faq.html" class="page-link">FAQ</a></li>
+                    <li><a href="#kontakt" class="page-link">Kontakt</a></li>
+                    <li><a href="#bottom-auth-section" id="register-link" class="page-link">Zarejestruj się</a></li>
+                    <li><a href="#bottom-auth-section" id="login-link" class="page-link">Zaloguj się</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Główna zawartość strony -->
+        <main>
+            <!-- Sekcja O nas -->
+            <section id="o-nas">
+                <h2>O nas</h2>
+                <p>
+                    <!-- Importowany tekst z O_nas.html -->
+                    Jesteśmy firmą, która specjalizuje się w dostarczaniu najwyższej jakości usług rekrutacyjnych. Naszym celem jest łączenie pracodawców z najlepszymi kandydatami na rynku pracy. Dzięki naszemu doświadczeniu i zaangażowaniu, pomagamy firmom znaleźć idealnych pracowników, a kandydatom znaleźć wymarzoną pracę.
+                </p>
+            </section>
+
+            <!-- Sekcja Baza CV -->
+            <section id="baza-cv">
+                <h2>Baza CV</h2>
+                <p>
+                    <!-- Importowany tekst z baza_cv.html -->
+                    Nasza baza CV to miejsce, gdzie pracodawcy mogą znaleźć najlepszych kandydatów na różne stanowiska. Kandydaci mogą zarejestrować swoje CV, aby zwiększyć swoje szanse na znalezienie pracy. Nasza baza jest regularnie aktualizowana i zawiera CV osób z różnych branż i o różnym poziomie doświadczenia.
+                </p>
+                <a href="#" class="subscribe-button">Subskrybuj</a>
+            </section>
+
+            <!-- Sekcja Oferty Pracy -->
+            <section id="oferty-pracy">
+                <h2>Oferty Pracy</h2>
+                <form id="search-form" class="oferty-pracy-search">
+                    <input type="text" id="search-input" placeholder="Wyszukaj po lokalizacji lub stanowisku">
+                    <button type="submit">Szukaj</button>
+                </form>
+                <div class="add-job-button-container">
+                    <a href="dodaj_oferte_op.html" class="button">Dodaj ofertę pracy</a>
+                </div>
+                <div class="job-grid" id="job-listings">
+                    <!-- Oferty pracy będą tutaj wstawiane dynamicznie -->
+                </div>
+                <div id="pagination" class="pagination"></div>
+            </section>
+
+            <!-- Sekcja Usługi -->
+            <section id="uslugi">
+                <h2>Usługi</h2>
+                <div class="add-service-button-container">
+                    <a href="dodaj_oferte_u.html" class="button">Dodaj usługę</a>
+                </div>
+                <div class="uslugi-list">
+                    <!-- Usługi będą generowane dynamicznie przez JavaScript -->
+                </div>
+                <div class="service-pagination">
+                    <!-- Paginacja będzie generowana dynamicznie przez JavaScript -->
+                </div>
+            </section>
+
+            <!-- Sekcja Kreator CV -->
+            <section id="kreator-cv">
+                <h2>Kreator CV</h2>
+                <div class="create-cv-button-container">
+                    <button class="create-cv-button">Stwórz CV</button>
+                </div>
+                <div class="kreator-cv-list">
+                    <div class="kreator-cv-item active">
+                        <img src="images/szablon1.jpg" alt="Szablon CV 1">
+                    </div>
+                    <div class="kreator-cv-item">
+                        <img src="images/szablon2.jpg" alt="Szablon CV 2">
+                    </div>
+                    <div class="kreator-cv-item">
+                        <img src="images/szablon3.jpg" alt="Szablon CV 3">
+                    </div>
+                    <div class="kreator-cv-item">
+                        <img src="images/szablon4.jpg" alt="Szablon CV 4">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja Kontakt -->
+            <section id="kontakt">
+                <h2>Kontakt</h2>
+                <form id="kontakt-form">
+                    <label for="name">Imię:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Wyślij</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Sekcja rejestracji i logowania na dole strony -->
+        <section id="bottom-auth-section">
+            <h2>Zarejestruj się</h2>
+            <form id="bottom-register-form">
+                <label for="bottom-register-username">Nazwa użytkownika:</label>
+                <input type="text" id="bottom-register-username" name="bottom-register-username" required>
+                <label for="bottom-register-email">Email:</label>
+                <input type="email" id="bottom-register-email" name="bottom-register-email" required>
+                <label for="bottom-register-password">Hasło:</label>
+                <input type="password" id="bottom-register-password" name="bottom-register-password" required>
+                <button type="submit">Zarejestruj się</button>
+            </form>
+
+            <h2>Zaloguj się</h2>
+            <form id="bottom-login-form">
+                <label for="bottom-login-username">Nazwa użytkownika:</label>
+                <input type="text" id="bottom-login-username" name="bottom-login-username" required>
+                <label for="bottom-login-password">Hasło:</label>
+                <input type="password" id="bottom-login-password" name="bottom-login-password" required>
+                <button type="submit">Zaloguj się</button>
+            </form>
+        </section>
+
+        <!-- Stopka -->
+        <footer>
+            <p>&copy; 2024 Moja Strona. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobListings = [
+                {
+                    title: 'Software Engineer',
+                    location: 'Warszawa',
+                    description: 'Praca nad rozwojem aplikacji webowych.',
+                    applyLink: '#'
+                },
+                {
+                    title: 'Project Manager',
+                    location: 'Kraków',
+                    description: 'Zarządzanie projektami IT.',
+                    applyLink: '#'
+                },
+                // Dodaj więcej ofert pracy tutaj
+            ];
+
+            const jobListingsContainer = document.getElementById('job-listings');
+            const jobCountElement = document.getElementById('job-count');
+            jobCountElement.textContent = jobListings.length;
+
+            jobListings.forEach(job => {
+                const jobSquare = document.createElement('div');
+                jobSquare.classList.add('job-square');
+
+                const jobTitle = document.createElement('h3');
+                jobTitle.textContent = job.title;
+                jobSquare.appendChild(jobTitle);
+
+                const jobLocation = document.createElement('p');
+                jobLocation.innerHTML = `<span class="location-marker">📍</span>${job.location}`;
+                jobSquare.appendChild(jobLocation);
+
+                const jobDescription = document.createElement('div');
+                jobDescription.classList.add('job-description');
+                jobDescription.textContent = job.description;
+                jobSquare.appendChild(jobDescription);
+
+                const applyButton = document.createElement('a');
+                applyButton.classList.add('apply-button');
+                applyButton.href = job.applyLink;
+                applyButton.textContent = 'Aplikuj';
+                jobSquare.appendChild(applyButton);
+
+                jobListingsContainer.appendChild(jobSquare);
+            });
+
+            // Aktualizacja licznika ofert pracy
+            jobCountElement.textContent = jobListings.length;
+        });
+    </script>
+</body>
+</html>

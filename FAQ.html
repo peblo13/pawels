@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+    <!-- Nagłówek strony -->
+    <div id="page-header">
+        <h1>FAQ - Najczęściej zadawane pytania</h1>
+    </div>
+
+    <!-- Nagłówek -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="O_nas.html">O nas</a></li>
+                <li class="dropdown">
+                    <a href="baza_CV.html">Baza CV</a>
+                </li>
+                <li class="dropdown">
+                    <a href="oferty_pracy.html">Oferty pracy</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="uslugi.html">Usługi</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte_uslugi.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="kreator_cv.html">Kreator CV</a>
+                    <ul class="submenu">
+                        <li><a href="stworz_cv.html">Stwórz CV</a></li>
+                        <li><a href="szablony_cv.html">Szablony CV</a></li>
+                    </ul>
+                </li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="#" id="register-link">Zarejestruj się</a></li>
+                <li><a href="#" id="login-link">Zaloguj się</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Główna zawartość strony -->
+    <main>
+        <section id="faq">
+            <h2>Najczęściej zadawane pytania</h2>
+            <ul>
+                <li><a href="odpowiedz1.html">Jak mogę się zarejestrować?</a></li>
+                <li><a href="odpowiedz2.html">Jak mogę dodać ofertę pracy?</a></li>
+                <li><a href="odpowiedz3.html">Jak mogę skontaktować się z obsługą klienta?</a></li>
+                <li><a href="odpowiedz4.html">Jak mogę stworzyć CV?</a></li>
+                <li><a href="odpowiedz5.html">Jak mogę znaleźć pracę?</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // Skrypt do obsługi formularza rejestracyjnego
+        document.getElementById('register-link').addEventListener('click', function() {
+            document.getElementById('register-modal').style.display = 'block';
+        });
+
+        document.querySelectorAll('.close-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('register-modal').style.display = 'none';
+                document.getElementById('login-modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('register-modal')) {
+                document.getElementById('register-modal').style.display = 'none';
+            }
+            if (event.target == document.getElementById('login-modal')) {
+                document.getElementById('login-modal').style.display = 'none';
+            }
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Rejestracja zakończona sukcesem!');
+            document.getElementById('register-modal').style.display = 'none';
+        });
+
+        // Skrypt do obsługi formularza logowania
+        document.getElementById('login-link').addEventListener('click', function() {
+            document.getElementById('login-modal').style.display = 'block';
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Logowanie zakończone sukcesem!');
+            document.getElementById('login-modal').style.display = 'none';
+        });
+
+        // Skrypt do obsługi formularza kontaktowego
+        document.getElementById('kontakt-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Wiadomość została wysłana!');
+            document.getElementById('kontakt-form').reset();
+        });
+    </script>
+</body>
+</html>

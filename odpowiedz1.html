@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odpowiedź 1 - eCVjob.pl</title>
+    <link rel="stylesheet" href="css/odpowiedz1.css">
+</head>
+<body>
+    <header>
+        <h1>eCVjob.pl</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="o_nas.html">O Nas</a></li>
+            <li><a href="baza_cv.html">Baza CV</a></li>
+            <li><a href="oferty_pracy.html">Oferty Pracy</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="kreator_cv.html">Kreator CV</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="login.html">Zaloguj się</a></li>
+            <li><a href="register.html">Zarejestruj się</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sekcja Odpowiedź 1 -->
+    <section id="odpowiedz1">
+        <h2>Jak się zarejestrować?</h2>
+        <p>Aby się zarejestrować na naszej stronie, wykonaj następujące kroki:</p>
+        <ol>
+            <li>Przejdź na stronę główną i kliknij przycisk "Zarejestruj się" w prawym górnym rogu.</li>
+            <li>Wypełnij formularz rejestracyjny, podając swoje dane osobowe, adres email oraz hasło.</li>
+            <li>Zapoznaj się z regulaminem i polityką prywatności, a następnie zaznacz odpowiednie pola, aby je zaakceptować.</li>
+            <li>Kliknij przycisk "Zarejestruj się", aby zakończyć proces rejestracji.</li>
+            <li>Otrzymasz email z linkiem aktywacyjnym. Kliknij w link, aby aktywować swoje konto.</li>
+        </ol>
+        <p>Po wykonaniu tych kroków będziesz mógł zalogować się na swoje konto i korzystać z pełnej funkcjonalności naszej strony.</p>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const links = navbar.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').split('.')[0];
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = this.getAttribute('href');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

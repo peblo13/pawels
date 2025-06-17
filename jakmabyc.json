@@ -1,0 +1,11 @@
+{
+    "jobs": [
+        {
+            "title": "Stanowisko",
+            "location": "Miejsce pracy",
+            "contract": "Rodzaj umowy",
+            "company": "Pracodawca",
+            "available_from": "Dostępna od"
+        }
+    ]
+}

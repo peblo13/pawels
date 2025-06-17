@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nas - eCVjob.pl</title>
+    <link rel="stylesheet" href="css/O_nas.css">
+</head>
+<body>
+    <header>
+        <h1>eCVjob.pl</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="o_nas.html">O Nas</a></li>
+            <li><a href="baza_cv.html">Baza CV</a></li>
+            <li><a href="oferty_pracy.html">Oferty Pracy</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="kreator_cv.html">Kreator CV</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="login.html">Zaloguj się</a></li>
+            <li><a href="register.html">Zarejestruj się</a></li>
+        </ul>
+    </nav>
+    <section id="o-nas">
+        <h2>O nas</h2>
+        <p>Jesteśmy firmą, która specjalizuje się w dostarczaniu najwyższej jakości usług rekrutacyjnych. Naszym celem jest łączenie pracodawców z najlepszymi kandydatami na rynku pracy. Dzięki naszemu doświadczeniu i zaangażowaniu, pomagamy firmom znaleźć idealnych pracowników, a kandydatom znaleźć wymarzoną pracę. Nasza firma działa na rynku od wielu lat, zdobywając zaufanie zarówno pracodawców, jak i kandydatów. Oferujemy szeroki zakres usług, w tym doradztwo personalne, rekrutację na stanowiska specjalistyczne i menedżerskie, a także szkolenia i rozwój zawodowy. Nasz zespół składa się z doświadczonych specjalistów, którzy z pasją podchodzą do swojej pracy i zawsze dążą do osiągnięcia najlepszych wyników. Współpracujemy z wieloma firmami z różnych branż, co pozwala nam na skuteczne dopasowanie kandydatów do specyficznych wymagań naszych klientów. Jesteśmy dumni z naszych osiągnięć i nieustannie dążymy do doskonalenia naszych usług, aby sprostać rosnącym oczekiwaniom rynku pracy.</p>
+    </section>
+    <section id="bottom-auth-section">
+        <h2>Rejestracja i Logowanie</h2>
+        <div id="bottom-register-form">
+            <label for="register-username">Nazwa użytkownika:</label>
+            <input type="text" id="register-username" name="register-username">
+            <label for="register-password">Hasło:</label>
+            <input type="password" id="register-password" name="register-password">
+            <button type="submit">Zarejestruj się</button>
+        </div>
+        <div id="bottom-login-form">
+            <label for="login-username">Nazwa użytkownika:</label>
+            <input type="text" id="login-username" name="login-username">
+            <label for="login-password">Hasło:</label>
+            <input type="password" id="login-password" name="login-password">
+            <button type="submit">Zaloguj się</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const links = navbar.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').split('.')[0];
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.href = this.getAttribute('href');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

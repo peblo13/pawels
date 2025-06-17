@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Ofertę Pracy</title>
+    <link rel="stylesheet" href="css/dodaj_oferte_op.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo"> <!-- Upewnij się, że ścieżka jest poprawna -->
+        <h1>eCVjob</h1>
+    </header>
+    <div class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">O nas</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#services">Usługi</a></li>
+            <li><a href="#jobs">Oferty pracy</a></li>
+            <li><a href="#cv-creator">Kreator CV</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+    <section id="add-job">
+        <h2>Dodaj Ofertę Pracy</h2>
+        <form id="add-job-form">
+            <label for="job-title">Nazwa stanowiska:</label>
+            <input type="text" id="job-title" name="job-title" required>
+
+            <label for="company">Firma:</label>
+            <input type="text" id="company" name="company" required>
+
+            <label for="location">Lokalizacja:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="start-date">Od kiedy jest wolny etat:</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <label for="description">Opis:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <button type="submit" class="submit-button">Dodaj ofertę</button>
+        </form>
+    </section>
+    <footer>
+        <p>Stopka strony</p>
+    </footer>
+    <script>
+        // Skrypt do obsługi formularza dodawania ofert pracy
+        document.getElementById('add-job-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Oferta pracy została dodana.');
+        });
+    </script>
+</body>
+</html>

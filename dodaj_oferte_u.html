@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Ofertę Usługi</title>
+    <link rel="stylesheet" href="css/dodaj_oferte_u.css">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Dodaj Ofertę Usługi</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="o_nas.html">O Nas</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="kariera.html">Kariera</a></li>
+        </ul>
+    </nav>
+    <section id="dodaj-oferte">
+        <h2>Dodaj Nową Ofertę Usługi</h2>
+        <form id="dodaj-oferte-form">
+            <label for="nazwa-firmy">Nazwa Firmy:</label>
+            <input type="text" id="nazwa-firmy" name="nazwa-firmy" required>
+
+            <label for="nazwa-uslugi">Nazwa Usługi:</label>
+            <input type="text" id="nazwa-uslugi" name="nazwa-uslugi" required>
+
+            <label for="lokalizacja">Lokalizacja:</label>
+            <input type="text" id="lokalizacja" name="lokalizacja" required>
+
+            <label for="opis">Opis Usługi:</label>
+            <textarea id="opis" name="opis" rows="5" required></textarea>
+
+            <label for="cena">Cena:</label>
+            <input type="text" id="cena" name="cena" required>
+
+            <button type="submit">Dodaj Usługę</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 eCVjob.pl</p>
+    </footer>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+</body>
+</html>

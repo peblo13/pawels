@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza CV - eCVjob.pl</title>
+    <link rel="stylesheet" href="css/baza_cv.css">
+</head>
+<body>
+    <header>
+        <h1>eCVjob.pl</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="o_nas.html">O Nas</a></li>
+            <li><a href="baza_cv.html">Baza CV</a></li>
+            <li><a href="oferty_pracy.html">Oferty Pracy</a></li>
+            <li><a href="uslugi.html">Usługi</a></li>
+            <li><a href="kreator_cv.html">Kreator CV</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="login.html">Zaloguj się</a></li>
+            <li><a href="register.html">Zarejestruj się</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sekcja Baza CV -->
+    <section id="baza-cv">
+        <h2>Baza CV</h2>
+        <p>Szybki dostęp do najnowszych CV kandydatów.</p>
+        <p>Możliwość filtrowania kandydatów według branży i lokalizacji.</p>
+        <p>Powiadomienia email i SMS o nowych kandydatach spełniających Twoje kryteria.</p>
+        <p>Łatwe zarządzanie subskrypcjami i powiadomieniami.</p>
+        <button class="subscribe-button">Subskrybuj</button>
+        <button class="browse-cv-button" onclick="handleBrowseCV()">Przeglądaj bazę CV</button>
+    </section>
+    
+    <!-- Sekcja rejestracji i logowania na dole strony -->
+    <section id="bottom-auth-section">
+        <h2>Rejestracja i Logowanie</h2>
+        <div id="bottom-register-form">
+            <label for="register-username">Nazwa użytkownika:</label>
+            <input type="text" id="register-username" name="register-username">
+            <label for="register-password">Hasło:</label>
+            <input type="password" id="register-password" name="register-password">
+            <button type="submit">Zarejestruj się</button>
+        </div>
+        <div id="bottom-login-form">
+            <label for="login-username">Nazwa użytkownika:</label>
+            <input type="text" id="login-username" name="login-username">
+            <label for="login-password">Hasło:</label>
+            <input type="password" id="login-password" name="login-password">
+            <button type="submit">Zaloguj się</button>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <script>
+        function handleBrowseCV() {
+            // Sprawdź, czy użytkownik jest zalogowany
+            const isLoggedIn = checkIfLoggedIn(); // Zmień na odpowiednią logikę sprawdzania zalogowania
+            const hasSubscription = checkIfHasSubscription(); // Zmień na odpowiednią logikę sprawdzania subskrypcji
+
+            console.log('isLoggedIn:', isLoggedIn);
+            console.log('hasSubscription:', hasSubscription);
+
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            } else if (!hasSubscription) {
+                alert('Musisz mieć wykupioną subskrypcję, aby przeglądać bazę CV.');
+            } else {
+                window.location.href = 'bazacv.json';
+            }
+        }
+
+        function checkIfLoggedIn() {
+            // Implementacja logiki sprawdzania, czy użytkownik jest zalogowany
+            // Na przykład, sprawdzenie obecności tokenu w localStorage
+            return localStorage.getItem('isLoggedIn') === 'true';
+        }
+
+        function checkIfHasSubscription() {
+            // Implementacja logiki sprawdzania, czy użytkownik ma subskrypcję
+            // Na przykład, sprawdzenie obecności subskrypcji w localStorage
+            return localStorage.getItem('hasSubscription') === 'true';
+        }
+    </script>
+</body>
+</html>

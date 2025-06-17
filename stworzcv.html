@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stwórz CV</title>
+    <link rel="stylesheet" href="css/stworzcv.css">
+</head>
+<body>
+    <!-- Nagłówek strony -->
+    <div id="page-header">
+        <h1>Stwórz CV</h1>
+    </div>
+
+    <!-- Nagłówek -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="O_nas.html">O nas</a></li>
+                <li class="dropdown">
+                    <a href="baza_CV.html">Baza CV</a>
+                </li>
+                <li class="dropdown">
+                    <a href="oferty_pracy.html">Oferty pracy</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="uslugi.html">Usługi</a>
+                    <ul class="submenu">
+                        <li><a href="dodaj_oferte_uslugi.html">Dodaj ofertę</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="kreator_cv.html">Kreator CV</a>
+                    <ul class="submenu">
+                        <li><a href="stworz_cv.html">Stwórz CV</a></li>
+                        <li><a href="szablony_cv.html">Szablony CV</a></li>
+                    </ul>
+                </li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="#" id="register-link">Zarejestruj się</a></li>
+                <li><a href="#" id="login-link">Zaloguj się</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Główna zawartość strony -->
+    <main>
+        <section id="stworz-cv">
+            <h2>Stwórz swoje CV</h2>
+            <form id="stworz-cv-form" action="szablony_cv.html" method="post">
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie" required>
+
+                <label for="nazwisko">Nazwisko:</label>
+                <input type="text" id="nazwisko" name="nazwisko" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefon">Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+
+                <label for="adres">Adres:</label>
+                <input type="text" id="adres" name="adres" required>
+
+                <label for="zdjecie">Zdjęcie:</label>
+                <input type="file" id="zdjecie" name="zdjecie" accept="image/*" required>
+
+                <!-- Sekcja O mnie -->
+                <label for="about">O mnie:</label>
+                <textarea id="about" name="about" rows="5" placeholder="Napisz kilka słów o sobie..."></textarea>
+
+                <div id="doswiadczenie-container">
+                    <label for="doswiadczenie">Doświadczenie zawodowe:</label>
+                    <div class="doswiadczenie-item">
+                        <input type="text" name="firma[]" placeholder="Nazwa firmy" required>
+                        <input type="text" name="stanowisko[]" placeholder="Stanowisko" required>
+                        <input type="date" name="data-rozpoczecia[]" placeholder="Data rozpoczęcia" required>
+                        <input type="date" name="data-zakonczenia[]" placeholder="Data zakończenia" required>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addDoswiadczenie()">Dodaj kolejne doświadczenie</button>
+
+                <div id="edukacja-container">
+                    <label for="edukacja">Edukacja:</label>
+                    <div class="edukacja-item">
+                        <input type="text" name="szkola[]" placeholder="Nazwa szkoły" required>
+                        <input type="text" name="stopien[]" placeholder="Uzyskany stopień naukowy" required>
+                        <input type="date" name="data-rozpoczecia-edukacja[]" placeholder="Data rozpoczęcia" required>
+                        <input type="date" name="data-zakonczenia-edukacja[]" placeholder="Data zakończenia" required>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addEdukacja()">Dodaj kolejną edukację</button>
+
+                <div id="jezyki-container">
+                    <label for="jezyki">Znajomość języków obcych:</label>
+                    <div class="jezyki-item">
+                        <input type="text" name="jezyk[]" placeholder="Język" required>
+                        <select name="poziom-jezyka[]" required>
+                            <option value="1">1 - Podstawowy</option>
+                            <option value="2">2 - Średniozaawansowany</option>
+                            <option value="3">3 - Zaawansowany</option>
+                            <option value="4">4 - Bardzo zaawansowany</option>
+                            <option value="5">5 - Biegły</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addJezyk()">Dodaj kolejny język</button>
+
+                <div id="umiejetnosci-container">
+                    <label for="umiejetnosci">Umiejętności:</label>
+                    <div class="umiejetnosci-item">
+                        <input type="text" name="umiejetnosc[]" placeholder="Umiejętność" required>
+                        <select name="poziom-umiejetnosci[]" required>
+                            <option value="1">1 - Podstawowy</option>
+                            <option value="2">2 - Średniozaawansowany</option>
+                            <option value="3">3 - Zaawansowany</option>
+                            <option value="4">4 - Bardzo zaawansowany</option>
+                            <option value="5">5 - Ekspert</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addUmiejetnosc()">Dodaj kolejną umiejętność</button>
+
+                <div id="zainteresowania-container">
+                    <label for="zainteresowania">Zainteresowania:</label>
+                    <div class="zainteresowania-item">
+                        <input type="text" name="zainteresowanie[]" placeholder="Zainteresowanie" required>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addZainteresowanie()">Dodaj kolejne zainteresowanie</button>
+
+                <button type="submit" onclick="handleSubmit(event)">Stwórz CV</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 eCVjob.pl. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferty Pracy</title>
+    <link rel="stylesheet" href="css/oferty_pracy.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo"> <!-- Upewnij się, że ścieżka jest poprawna -->
+        <h1>eCVjob</h1>
+    </header>
+    <div class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">O nas</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#services">Usługi</a></li>
+            <li><a href="#jobs">Oferty pracy</a></li>
+            <li><a href="#cv-creator">Kreator CV</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+    <section id="job-listings">
+        <h2>Oferty Pracy</h2>
+        <button class="add-job-button">Dodaj ofertę pracy</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Lokalizacja" id="location">
+            <input type="text" placeholder="Zawód" id="job-title">
+            <button class="search-button">Szukaj</button>
+        </div>
+        <div class="job-grid">
+            <!-- Tutaj będą wyświetlane oferty pracy -->
+        </div>
+        <div class="pagination" id="pagination">
+            <!-- Przycisk paginacji -->
+        </div>
+    </section>
+    <footer>
+        <p>Stopka strony</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
