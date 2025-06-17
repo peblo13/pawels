@@ -1,0 +1,95 @@
+/* Styl dla kontenera */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl dla nagłówka */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Styl dla sekcji */
+section {
+    margin-bottom: 20px;
+    position: relative;
+    background-color: rgba(51, 51, 51, 0.8); /* Ciemnoszary kolor z przezroczystością */
+    color: #fff; /* Biały kolor tekstu */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    border-bottom: 2px solid #fff; /* Biały kolor */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.job, .school {
+    margin-bottom: 20px;
+}
+
+/* Styl dla stopki */
+footer {
+    border-top: 2px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff; /* Biały kolor */
+}
+
+/* Styl dla układu 2x2 */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Styl dla gwiazdek */
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    color: gold;
+    font-size: 20px;
+}

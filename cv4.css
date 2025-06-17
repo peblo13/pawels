@@ -1,0 +1,256 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px; /* Dodano padding, aby zapewnić odstęp od krawędzi przeglądarki */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Zmieniono z center na flex-start, aby CV było widoczne od góry */
+    min-height: 100vh; /* Zmieniono height na min-height */
+}
+
+.cv-container {
+    background-color: #ffffff;
+    width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 20px; /* Dodano margines górny, aby zapewnić odstęp od paska przeglądarki */
+}
+
+header {
+    background-color: #00cc00;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: #00cc00;
+    border-bottom: 2px solid #00cc00;
+    padding-bottom: 5px;
+}
+
+.job, .school {
+    margin-bottom: 10px;
+}
+
+.job h3, .school h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333333;
+}
+
+.job p, .school p {
+    margin: 5px 0;
+    color: #666666;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+footer {
+    background-color: #00cc00;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Dodatkowe style */
+.cv-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    font-size: 16px;
+}
+
+section h2 {
+    font-size: 22px;
+}
+
+.job h3, .school h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.job p, .school p {
+    font-size: 16px;
+}
+
+ul li {
+    font-size: 16px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .cv-container {
+        width: 90%;
+    }
+
+    .profile-pic {
+        flex: 0 0 80px;
+    }
+
+    .profile-pic img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact-info h1 {
+        font-size: 24px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    .job h3, .school h3 {
+        font-size: 18px;
+    }
+
+    .job p, .school p {
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-container {
+        width: 100%;
+    }
+
+    .profile-pic {
+        flex: 0 0 60px;
+    }
+
+    .profile-pic img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-info h1 {
+        font-size: 20px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    .job h3, .school h3 {
+        font-size: 16px;
+    }
+
+    .job p, .school p {
+        font-size: 12px;
+    }
+
+    ul li {
+        font-size: 12px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+}

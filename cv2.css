@@ -1,0 +1,187 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #e0e0e0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #003366;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    position: relative;
+    flex: 0 0 150px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #003366;
+    object-fit: cover;
+}
+
+#imageUpload {
+    display: none;
+}
+
+.upload-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #003366;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.upload-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.header-content {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #003366;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    flex: 1;
+    background: #003366;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+aside section {
+    margin-bottom: 20px;
+}
+
+aside h2 {
+    font-size: 1.5rem;
+    color: #000; /* Zmieniono kolor na czarny */
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.stars {
+    color: #ffcc00;
+}
+
+.content {
+    flex: 2;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.job, .school {
+    margin-bottom: 20px;
+}
+
+.job h3, .school h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.job p, .school p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.job ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 4px solid #003366;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li {
+    margin: 0;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #003366;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #666;
+}

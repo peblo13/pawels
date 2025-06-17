@@ -1,0 +1,244 @@
+/* Ogólne style */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/tlo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .site-title {
+    color: #00ff00; /* Jaskrawo zielony tekst */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar {
+    background-color: transparent; /* Przezroczysta nakładka */
+    overflow: hidden;
+    position: relative;
+    z-index: 2000; /* Zwiększenie wartości z-index dla paska nawigacyjnego */
+    padding: 10px 0; /* Dodanie odstępów w pionie */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Dodanie odstępów między elementami listy */
+}
+
+.navbar ul li {
+    margin: 15px 10px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+}
+
+.navbar ul li a:hover {
+    background: rgba(0, 0, 0, 0.8); /* Ciemniejsze tło na hover */
+    color: #ffffff;
+}
+
+.navbar ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333; /* Usunięcie półprzezroczystej nakładki */
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1001; /* Ustawienie wysokiego z-index dla podmenu */
+}
+
+.navbar ul li:hover .submenu {
+    display: block;
+}
+
+.navbar ul li .submenu li {
+    margin: 0;
+}
+
+.navbar ul li .submenu li a {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar ul li .submenu li a:hover {
+    background: rgba(0, 0, 0, 0.8); /* Ciemniejsze tło na hover */
+    color: #ffffff;
+}
+
+/* Media query dla małych ekranów */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Dodanie odstępów między elementami listy w pionie */
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #00ff00;
+    }
+
+    .navbar ul li a:hover {
+        background: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        transform: none;
+    }
+
+    .navbar ul li .submenu {
+        position: static;
+        width: 100%;
+    }
+
+    .navbar ul li .submenu li a {
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #00ff00;
+    }
+}
+
+/* Sekcja dodaj ofertę */
+#dodaj-oferte {
+    max-width: 800px;
+    margin: 60px auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    z-index: 2; /* Sekcja będzie nad logo */
+}
+
+#dodaj-oferte h2 {
+    color: #00ff00; /* Jaskrawo zielony tekst */
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#dodaj-oferte-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#dodaj-oferte-form label {
+    color: #00ff00; /* Jaskrawo zielony tekst */
+    font-weight: bold;
+}
+
+#dodaj-oferte-form input,
+#dodaj-oferte-form textarea {
+    padding: 10px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #00ff00;
+    font-size: 1rem;
+}
+
+#dodaj-oferte-form button {
+    background: #00ff00; /* Jaskrawo zielony kolor */
+    color: #fff;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#dodaj-oferte-form button:hover {
+    background: rgba(0, 255, 0, 0.2);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+/* Logo */
+.logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+    z-index: 1; /* Logo będzie pod sekcjami */
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sekcja dolna */
+footer {
+    background: rgba(0, 0, 0, 0.6); /* Czarny półprzezroczysty 60% */
+    color: #00ff00;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    z-index: 5; /* Stopka będzie nad logo */
+}

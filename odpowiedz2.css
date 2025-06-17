@@ -1,0 +1,188 @@
+/* Ogólne style */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/tlo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: auto; /* Umożliwia przewijanie strony */
+}
+
+/* Nagłówek */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+    animation: slideIn 1s ease-in-out;
+}
+
+header h1 {
+    color: #00ff00;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Pasek zakładek */
+.navbar {
+    overflow: hidden;
+    position: relative;
+    z-index: 2000;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navbar ul li {
+    margin: 15px 10px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+}
+
+.navbar ul li a:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+.navbar ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 3000;
+}
+
+.navbar ul li:hover .submenu {
+    display: block;
+}
+
+.navbar ul li .submenu li {
+    margin: 0;
+}
+
+.navbar ul li .submenu li a {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar ul li .submenu li a:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+/* Sekcje, które mają być nad logo */
+header, #o-nas, #baza-cv, #oferty-pracy, #uslugi, #kreator-cv, #kontakt, #bottom-auth-section {
+    position: relative;
+    z-index: 5;
+}
+
+/* Sekcje, które mają być nad logo */
+header, #o-nas, #baza-cv, #oferty-pracy, #uslugi, #kreator-cv, #kontakt, #bottom-auth-section {
+    position: relative;
+    z-index: 5;
+}
+
+/* Logo */
+.logo {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Sekcja Odpowiedź 2 */
+#odpowiedz2 {
+    background: rgba(0, 0, 0, 0.6); /* Półprzezroczysta nakładka 60% */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #00ff00;
+    text-align: center;
+    font-weight: bold;
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+    z-index: 5;
+}
+
+#odpowiedz2 h2 {
+    font-weight: bold;
+    color: #00ff00;
+}
+
+#odpowiedz2 p {
+    color: #ffffff; /* Zmieniono kolor tekstu na biały */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#odpowiedz2 ol {
+    color: #ffffff; /* Zmieniono kolor tekstu na biały */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Stopka */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #00ff00;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+/* Animacje */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
